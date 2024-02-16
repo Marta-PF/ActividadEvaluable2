@@ -3,15 +3,18 @@ package model;
 public class Carrera {
 
     private Coche participante1, participante2;
-    private double kmTotales;
+
+    private Coche ganador;
+    private int kmTotales;
     private int numVueltas;
+
 
 
 
     public Carrera() {
     }
 
-    public Carrera(Coche participante1, Coche participante2, double kmTotales, int numVueltas) {
+    public Carrera(Coche participante1, Coche participante2, int kmTotales, int numVueltas) {
         this.kmTotales = kmTotales;
         this.numVueltas = numVueltas;
     }
@@ -36,7 +39,7 @@ public class Carrera {
         return kmTotales;
     }
 
-    public void setKmTotales(double kmTotales) {
+    public void setKmTotales(int kmTotales) {
         this.kmTotales = kmTotales;
     }
 
@@ -48,25 +51,41 @@ public class Carrera {
         this.numVueltas = numVueltas;
     }
 
-    public void iniciarCarrera (Coche participante1, Coche participante2){
+    public void iniciarCarrera(Coche participante1, Coche participante2) {
 
         participante1.mostrarDatos();
         participante2.mostrarDatos();
 
-        for (int i = 0; i < numVueltas; i++) {
+        do {
+                System.out.println("¡Los coches aceleran!");
+                System.out.println("Velocidad " + participante1.getModelo() + " :" + participante1.getVelocidad());
+                System.out.println("Velocidad " + participante2.getModelo() + " :" + participante2.getVelocidad());
+                participante1.acelerar();
+                participante2.acelerar();
+
+        }while (participante1.getKmRecorridos()<= kmTotales || participante2.getKmRecorridos()<=kmTotales);
+
+
+        /*for (int i = 0; i < numVueltas; i++) {
             System.out.println("¡Los coches aceleran!");
-            System.out.println("Velocidad "+participante1.getModelo() +" :" +participante1.getVelocidad());
-            System.out.println("Velocidad "+participante2.getModelo() +" :" +participante2.getVelocidad());
+            System.out.println("Velocidad " + participante1.getModelo() + " :" + participante1.getVelocidad());
+            System.out.println("Velocidad " + participante2.getModelo() + " :" + participante2.getVelocidad());
             participante1.acelerar();
             participante2.acelerar();
+            if(participante1.getKmRecorridos()>= kmTotales){
+                System.out.println("Ganador "+participante1.getModelo() +"!");
+                break;
+        } else if (participante2.getKmRecorridos()>=kmTotales) {
+                System.out.println("Ganador "+participante2.getModelo() +"!");
+                break;
+            }
 
-        }
-
+        }*/ participante1.mostrarDatos();
+        participante2.mostrarDatos();
 
 
 
     }
-
 
 
 }
