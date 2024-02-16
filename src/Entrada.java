@@ -1,3 +1,4 @@
+import model.Carrera;
 import model.Coche;
 
 public class Entrada {
@@ -14,9 +15,11 @@ public class Entrada {
         //cocheAzul.mostrarDatos();
         //cocheRojo.mostrarDatos();
 
+        Carrera carrera = new Carrera(cocheAzul, cocheRojo,100,5);
 
 
 
+        carrera.iniciarCarrera(cocheAzul, cocheRojo);
 
     }
 }
