@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Coche.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Coche.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">model</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Coche </span><span class="s2">{</span>
+    <span class="s0">private int </span><span class="s1">cv</span><span class="s2">, </span><span class="s1">cc</span><span class="s2">, </span><span class="s1">velocidad</span><span class="s2">,</span><span class="s1">kmRecorridos</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">String marca</span><span class="s2">, </span><span class="s1">modelo</span><span class="s2">, </span><span class="s1">matricula</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Coche</span><span class="s2">() {</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Coche</span><span class="s2">(</span><span class="s0">int </span><span class="s1">cv</span><span class="s2">, </span><span class="s0">int </span><span class="s1">cc</span><span class="s2">, </span><span class="s0">int </span><span class="s1">velocidad</span><span class="s2">, </span><span class="s0">int </span><span class="s1">kmRecorridos</span><span class="s2">, </span><span class="s1">String marca</span><span class="s2">, </span><span class="s1">String modelo</span><span class="s2">, </span><span class="s1">String matricula</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cv </span><span class="s2">= </span><span class="s1">cv</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cc </span><span class="s2">= </span><span class="s1">cc</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">velocidad </span><span class="s2">= </span><span class="s1">velocidad</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">kmRecorridos </span><span class="s2">= </span><span class="s1">kmRecorridos</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">marca </span><span class="s2">= </span><span class="s1">marca</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">modelo </span><span class="s2">= </span><span class="s1">modelo</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">matricula </span><span class="s2">= </span><span class="s1">matricula</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">acelerar</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot; &quot;</span><span class="s2">+ </span><span class="s1">modelo </span><span class="s2">+ </span><span class="s3">&quot; lleva una velocidad de &quot; </span><span class="s2">+ </span><span class="s1">velocidad </span><span class="s2">+ </span><span class="s3">&quot; y está acelerando...&quot;</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">cv </span><span class="s2">&lt; </span><span class="s4">100</span><span class="s2">) {</span>
+            <span class="s1">velocidad </span><span class="s2">+= (</span><span class="s0">int</span><span class="s2">) ((</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s4">40</span><span class="s2">) + </span><span class="s1">getVelocidad</span><span class="s2">())+</span><span class="s4">10</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s1">velocidad </span><span class="s2">+= (</span><span class="s0">int</span><span class="s2">) (((</span><span class="s1">Math</span><span class="s2">.</span><span class="s1">random</span><span class="s2">() * </span><span class="s4">40</span><span class="s2">) + </span><span class="s4">10</span><span class="s2">) + </span><span class="s1">getVelocidad</span><span class="s2">())+</span><span class="s4">10</span><span class="s2">;</span>
+        <span class="s1">kmRecorridos </span><span class="s2">+= (</span><span class="s1">kmRecorridos </span><span class="s2">+ (</span><span class="s1">velocidad </span><span class="s2">/ </span><span class="s4">2</span><span class="s2">));</span>
+
+        <span class="s5">//Me salen unas velocidades algo disparatadas</span>
+        <span class="s5">//No estoy muy segura de qué hacer con &quot;deberá acelerar como mínimo 10km/h&quot;, ¿no se supone que eso es lo que</span>
+        <span class="s5">//indica el else?</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;¡&quot;</span><span class="s2">+ </span><span class="s1">modelo </span><span class="s2">+ </span><span class="s3">&quot; ahora lleva una velocidad de &quot; </span><span class="s2">+ </span><span class="s1">velocidad </span><span class="s2">+ </span><span class="s3">&quot;!&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;-----------&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">mostrarDatos</span><span class="s2">() {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Modelo: &quot; </span><span class="s2">+ </span><span class="s1">modelo</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Marca: &quot; </span><span class="s2">+ </span><span class="s1">marca</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Matrícula: &quot; </span><span class="s2">+ </span><span class="s1">matricula</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;CV: &quot; </span><span class="s2">+ </span><span class="s1">cv</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;CC: &quot; </span><span class="s2">+ </span><span class="s1">cc</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Velocidad: &quot; </span><span class="s2">+ </span><span class="s1">velocidad</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Km Recorridos: &quot; </span><span class="s2">+ </span><span class="s1">kmRecorridos</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;-----------------&quot;</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+
+    <span class="s0">public int </span><span class="s1">getCv</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">cv</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setCv</span><span class="s2">(</span><span class="s0">int </span><span class="s1">cv</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cv </span><span class="s2">= </span><span class="s1">cv</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getCc</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">cc</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setCc</span><span class="s2">(</span><span class="s0">int </span><span class="s1">cc</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cc </span><span class="s2">= </span><span class="s1">cc</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getMatricula</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">matricula</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setMatricula</span><span class="s2">(</span><span class="s1">String matricula</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">matricula </span><span class="s2">= </span><span class="s1">matricula</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getVelocidad</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">velocidad</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setVelocidad</span><span class="s2">(</span><span class="s0">int </span><span class="s1">velocidad</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">velocidad </span><span class="s2">= </span><span class="s1">velocidad</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getKmRecorridos</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">kmRecorridos</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setKmRecorridos</span><span class="s2">(</span><span class="s0">int </span><span class="s1">kmRecorridos</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">kmRecorridos</span><span class="s2">=</span><span class="s1">kmRecorridos</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">java</span><span class="s2">.</span><span class="s1">lang</span><span class="s2">.</span><span class="s1">String getMarca</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">marca</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setMarca</span><span class="s2">(</span><span class="s1">java</span><span class="s2">.</span><span class="s1">lang</span><span class="s2">.</span><span class="s1">String marca</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">marca </span><span class="s2">= </span><span class="s1">marca</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">java</span><span class="s2">.</span><span class="s1">lang</span><span class="s2">.</span><span class="s1">String getModelo</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">modelo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setModelo</span><span class="s2">(</span><span class="s1">java</span><span class="s2">.</span><span class="s1">lang</span><span class="s2">.</span><span class="s1">String modelo</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">modelo </span><span class="s2">= </span><span class="s1">modelo</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

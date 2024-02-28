@@ -20,18 +20,18 @@ public class Coche {
 
 
     public void acelerar() {
-        System.out.println("El modelo " + modelo + " lleva una velocidad de " + velocidad + " y está acelerando...");
+        System.out.println(" "+ modelo + " lleva una velocidad de " + velocidad + " y está acelerando...");
         if (cv < 100) {
-            velocidad += (int) ((Math.random() * 40) + getVelocidad());
-        } else velocidad += (int) (((Math.random() * 40) + 10) + getVelocidad());
+            velocidad += (int) ((Math.random() * 40) + getVelocidad())+10;
+        } else velocidad += (int) (((Math.random() * 40) + 10) + getVelocidad())+10;
         kmRecorridos += (kmRecorridos + (velocidad / 2));
 
         //Me salen unas velocidades algo disparatadas
         //No estoy muy segura de qué hacer con "deberá acelerar como mínimo 10km/h", ¿no se supone que eso es lo que
         //indica el else?
 
-        System.out.println("¡El modelo " + modelo + " ahora lleva una velocidad de " + velocidad + "!");
-        System.out.println("-----------------");
+        System.out.println("¡"+ modelo + " ahora lleva una velocidad de " + velocidad + "!");
+        System.out.println("-----------");
     }
 
     public void mostrarDatos() {

@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Carrera.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Carrera.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">model</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Carrera </span><span class="s2">{</span>
+
+    <span class="s0">private </span><span class="s1">Coche participante1</span><span class="s2">, </span><span class="s1">participante2</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">Coche ganador</span><span class="s2">;</span>
+    <span class="s0">private int </span><span class="s1">kmTotales</span><span class="s2">;</span>
+    <span class="s0">private int </span><span class="s1">numVueltas</span><span class="s2">;</span>
+
+
+
+
+    <span class="s0">public </span><span class="s1">Carrera</span><span class="s2">() {</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Carrera</span><span class="s2">(</span><span class="s1">Coche participante1</span><span class="s2">, </span><span class="s1">Coche participante2</span><span class="s2">, </span><span class="s0">int </span><span class="s1">kmTotales</span><span class="s2">, </span><span class="s0">int </span><span class="s1">numVueltas</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">kmTotales </span><span class="s2">= </span><span class="s1">kmTotales</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">numVueltas </span><span class="s2">= </span><span class="s1">numVueltas</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Coche getParticipante1</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">participante1</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setParticipante1</span><span class="s2">(</span><span class="s1">Coche participante1</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">participante1 </span><span class="s2">= </span><span class="s1">participante1</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Coche getParticipante2</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">participante2</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setParticipante2</span><span class="s2">(</span><span class="s1">Coche participante2</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">participante2 </span><span class="s2">= </span><span class="s1">participante2</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getKmTotales</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">kmTotales</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setKmTotales</span><span class="s2">(</span><span class="s0">int </span><span class="s1">kmTotales</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">kmTotales </span><span class="s2">= </span><span class="s1">kmTotales</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getNumVueltas</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">numVueltas</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setNumVueltas</span><span class="s2">(</span><span class="s0">int </span><span class="s1">numVueltas</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">numVueltas </span><span class="s2">= </span><span class="s1">numVueltas</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">iniciarCarrera</span><span class="s2">(</span><span class="s1">Coche participante1</span><span class="s2">, </span><span class="s1">Coche participante2</span><span class="s2">) {</span>
+
+        <span class="s1">participante1</span><span class="s2">.</span><span class="s1">mostrarDatos</span><span class="s2">();</span>
+        <span class="s1">participante2</span><span class="s2">.</span><span class="s1">mostrarDatos</span><span class="s2">();</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">1</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">numVueltas</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;##¡Comienza la vuelta &quot; </span><span class="s2">+</span><span class="s1">i </span><span class="s2">+</span><span class="s4">&quot;!##&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot; &quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Velocidad &quot; </span><span class="s2">+ </span><span class="s1">participante1</span><span class="s2">.</span><span class="s1">getModelo</span><span class="s2">() + </span><span class="s4">&quot; :&quot; </span><span class="s2">+ </span><span class="s1">participante1</span><span class="s2">.</span><span class="s1">getVelocidad</span><span class="s2">());</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Velocidad &quot; </span><span class="s2">+ </span><span class="s1">participante2</span><span class="s2">.</span><span class="s1">getModelo</span><span class="s2">() + </span><span class="s4">&quot; :&quot; </span><span class="s2">+ </span><span class="s1">participante2</span><span class="s2">.</span><span class="s1">getVelocidad</span><span class="s2">());</span>
+            <span class="s1">participante1</span><span class="s2">.</span><span class="s1">acelerar</span><span class="s2">();</span>
+            <span class="s1">participante2</span><span class="s2">.</span><span class="s1">acelerar</span><span class="s2">();</span>
+            <span class="s0">if</span><span class="s2">(</span><span class="s1">participante1</span><span class="s2">.</span><span class="s1">getKmRecorridos</span><span class="s2">()&gt;= </span><span class="s1">kmTotales</span><span class="s2">){</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;#####¡¡GANADOR &quot;</span><span class="s2">+</span><span class="s1">participante1</span><span class="s2">.</span><span class="s1">getModelo</span><span class="s2">() +</span><span class="s4">&quot;!!#####&quot;</span><span class="s2">);</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot; &quot;</span><span class="s2">);</span>
+                <span class="s0">break</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">participante2</span><span class="s2">.</span><span class="s1">getKmRecorridos</span><span class="s2">()&gt;=</span><span class="s1">kmTotales</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;#####¡¡GANADOR &quot;</span><span class="s2">+</span><span class="s1">participante2</span><span class="s2">.</span><span class="s1">getModelo</span><span class="s2">() +</span><span class="s4">&quot;!!#####&quot;</span><span class="s2">);</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot; &quot;</span><span class="s2">);</span>
+                <span class="s0">break</span><span class="s2">;</span>
+            <span class="s2">}</span>
+
+        <span class="s2">}</span>
+
+        <span class="s1">participante1</span><span class="s2">.</span><span class="s1">mostrarDatos</span><span class="s2">();</span>
+        <span class="s1">participante2</span><span class="s2">.</span><span class="s1">mostrarDatos</span><span class="s2">();</span>
+
+        <span class="s5">//OTRA VERSIÓN PARA QUE LA CARRERA DURE LOS KILÓMETROS QUE SEAN</span>
+
+        <span class="s5">/* do { 
+                System.out.println(&quot;¡Los coches aceleran!&quot;); 
+                System.out.println(&quot;Velocidad &quot; + participante1.getModelo() + &quot; :&quot; + participante1.getVelocidad()); 
+                System.out.println(&quot;Velocidad &quot; + participante2.getModelo() + &quot; :&quot; + participante2.getVelocidad()); 
+                participante1.acelerar(); 
+                participante2.acelerar(); 
+ 
+        }while (participante1.getKmRecorridos()&lt;= kmTotales || participante2.getKmRecorridos()&lt;=kmTotales); 
+*/</span>
+
+
+
+    <span class="s2">}</span>
+
+
+<span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>

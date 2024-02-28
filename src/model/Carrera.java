@@ -56,7 +56,31 @@ public class Carrera {
         participante1.mostrarDatos();
         participante2.mostrarDatos();
 
-        do {
+        for (int i = 1; i < numVueltas; i++) {
+            System.out.println("##¡Comienza la vuelta " +i +"!##");
+            System.out.println(" ");
+            System.out.println("Velocidad " + participante1.getModelo() + " :" + participante1.getVelocidad());
+            System.out.println("Velocidad " + participante2.getModelo() + " :" + participante2.getVelocidad());
+            participante1.acelerar();
+            participante2.acelerar();
+            if(participante1.getKmRecorridos()>= kmTotales){
+                System.out.println("#####¡¡GANADOR "+participante1.getModelo() +"!!#####");
+                System.out.println(" ");
+                break;
+        } else if (participante2.getKmRecorridos()>=kmTotales) {
+                System.out.println("#####¡¡GANADOR "+participante2.getModelo() +"!!#####");
+                System.out.println(" ");
+                break;
+            }
+
+        }
+
+        participante1.mostrarDatos();
+        participante2.mostrarDatos();
+
+        //OTRA VERSIÓN PARA QUE LA CARRERA DURE LOS KILÓMETROS QUE SEAN
+
+        /* do {
                 System.out.println("¡Los coches aceleran!");
                 System.out.println("Velocidad " + participante1.getModelo() + " :" + participante1.getVelocidad());
                 System.out.println("Velocidad " + participante2.getModelo() + " :" + participante2.getVelocidad());
@@ -64,24 +88,7 @@ public class Carrera {
                 participante2.acelerar();
 
         }while (participante1.getKmRecorridos()<= kmTotales || participante2.getKmRecorridos()<=kmTotales);
-
-
-        /*for (int i = 0; i < numVueltas; i++) {
-            System.out.println("¡Los coches aceleran!");
-            System.out.println("Velocidad " + participante1.getModelo() + " :" + participante1.getVelocidad());
-            System.out.println("Velocidad " + participante2.getModelo() + " :" + participante2.getVelocidad());
-            participante1.acelerar();
-            participante2.acelerar();
-            if(participante1.getKmRecorridos()>= kmTotales){
-                System.out.println("Ganador "+participante1.getModelo() +"!");
-                break;
-        } else if (participante2.getKmRecorridos()>=kmTotales) {
-                System.out.println("Ganador "+participante2.getModelo() +"!");
-                break;
-            }
-
-        }*/ participante1.mostrarDatos();
-        participante2.mostrarDatos();
+*/
 
 
 
